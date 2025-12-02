@@ -21,12 +21,12 @@ WINDOW_SIZE = 3
 @st.cache_resource
 def load_assets():
     # Load 3 Models
-    model_rnn = tf.keras.models.load_model('models/rnn_model.h5', compile=False)
-    model_lstm = tf.keras.models.load_model('models/lstm_model.h5', compile=False)
-    model_gru = tf.keras.models.load_model('models/gru_model.h5', compile=False)
+    model_rnn = tf.keras.models.load_model('rnn_model.h5', compile=False)
+    model_lstm = tf.keras.models.load_model('lstm_model.h5', compile=False)
+    model_gru = tf.keras.models.load_model('gru_model.h5', compile=False)
     
     # Load Scaler
-    scaler = joblib.load('utils/scaler.pkl')
+    scaler = joblib.load('scaler.pkl')
     
     # Load Data & Preprocessing
     df = pd.read_csv('Data Penjualan Gas - Data Final.csv')
@@ -250,4 +250,5 @@ with col_main:
             st.write("🔍 **Debug Info:**")
             st.write(f"- Window Size setting: {WINDOW_SIZE}")
             st.write(f"- Total Data History: {len(df_hist)}")
+
             st.write("- Pastikan scaler.pkl cocok dengan data demand.")

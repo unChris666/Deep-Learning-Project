@@ -81,7 +81,7 @@ def predict_until_target(model, scaler, df_history, window_size, target_date):
 
 # --- 4. DASHBOARD UI LAYOUT ---
 
-st.title("🔋 LPG Demand Intelligence Hub")
+st.title("LPG Demand Intelligence Hub")
 st.markdown("*Multi-Model Comparison: RNN vs LSTM vs GRU*")
 st.divider()
 
@@ -252,3 +252,4 @@ with col_main:
             st.write(f"- Total Data History: {len(df_hist)}")
 
             st.write("- Pastikan scaler.pkl cocok dengan data demand.")
+
